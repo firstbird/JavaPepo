@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <package name="com.testSSH.action" extends="struts-default">
+        <action name="hello" class="com.testSSH.action.TestAction" method="execute">
+            <result name="success">/Helloworld.jsp</result>
+        </action>
+        <action name="redirect1" class="com.testSSH.action.UserAction" method="redirect1">
+            <result name="success" type="redirect">/redirect1.jsp</result> 
+        </action>
+        <action name="User" class="com.testSSH.action.UserAction" method="execute">
+            <result name="success">/Helloworld.jsp</result>
+        </action>
+        <action name="addUser" class="com.testSSH.action.UserAction" method="add">
+            <result name="success">/Helloworld.jsp</result>
+        </action>
+        <action name="updateUser" class="com.testSSH.action.UserAction" method="update">
+            <result name="success">/Helloworld.jsp</result>
+        </action>
+        <action name="deleteUser" class="com.testSSH.action.UserAction" method="delete">
+            <result name="success">/Helloworld.jsp</result>
+        </action>
+        <action name="regUser" class="regUserAction" method="register">
+        	<result name="success" type="dispatcher">/UserInfo.jsp</result>
+        </action>
+        <action name="showCountry" class="showCountryAction" method="showCountry">
+        	<result name="success" type="dispatcher">/UserInfo.jsp</result>
+        </action>
+        
+    </package>
+
+
+</struts>
+ 

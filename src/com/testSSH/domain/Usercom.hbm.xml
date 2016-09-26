@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-20 8:09:50 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.testSSH.domain.Usercom" table="usercom" catalog="xiaonei" optimistic-lock="version">
+        <id name="ucId" type="java.lang.Integer">
+            <column name="uc_id" />
+            <generator class="identity" />
+        </id>
+        <property name="ucUserId" type="java.lang.Integer">
+            <column name="uc_userId" />
+        </property>
+        <property name="ucName" type="string">
+            <column name="uc_name" length="64" />
+        </property>
+        <property name="ucDescribe" type="string">
+            <column name="uc_describe" length="256" />
+        </property>
+        <property name="ucTrade" type="java.lang.Integer">
+            <column name="uc_trade" />
+        </property>
+        <property name="ucTradeInfo" type="java.lang.Integer">
+            <column name="uc_tradeInfo" />
+        </property>
+        <property name="ucJob" type="java.lang.Integer">
+            <column name="uc_job" />
+        </property>
+        <property name="ucJobInfo" type="java.lang.Integer">
+            <column name="uc_jobInfo" />
+        </property>
+        <property name="ucDate" type="string">
+            <column name="uc_date" length="16" />
+        </property>
+    </class>
+</hibernate-mapping>

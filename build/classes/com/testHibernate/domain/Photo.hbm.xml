@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-20 8:09:13 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.testHibernate.domain.Photo" table="photo" catalog="xiaonei" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="album" class="com.testHibernate.domain.Album" fetch="select">
+            <column name="albumId" />
+        </many-to-one>
+        <property name="photo" type="string">
+            <column name="photo" length="64" />
+        </property>
+        <property name="descript" type="string">
+            <column name="descript" length="256" />
+        </property>
+        <property name="rtime" type="java.lang.Integer">
+            <column name="rtime" />
+        </property>
+        <property name="addTime" type="timestamp">
+            <column name="addTime" length="19" />
+        </property>
+        <set name="photocomments" table="photocomment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="photoId" />
+            </key>
+            <one-to-many class="com.testHibernate.domain.Photocomment" />
+        </set>
+    </class>
+</hibernate-mapping>

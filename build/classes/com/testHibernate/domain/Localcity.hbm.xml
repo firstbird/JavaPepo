@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-20 8:09:13 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.testHibernate.domain.Localcity" table="localcity" catalog="xiaonei" optimistic-lock="version">
+        <id name="lcId" type="java.lang.Integer">
+            <column name="lc_id" />
+            <generator class="identity" />
+        </id>
+        <property name="lcName" type="string">
+            <column name="lc_name" length="32" />
+        </property>
+        <property name="lcLpId" type="java.lang.Integer">
+            <column name="lc_lpId" />
+        </property>
+    </class>
+</hibernate-mapping>

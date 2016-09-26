@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-20 8:09:13 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.testHibernate.domain.Localprovince" table="localprovince" catalog="xiaonei" optimistic-lock="version">
+        <id name="lpId" type="int">
+            <column name="lp_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="lpName" type="string">
+            <column name="lp_name" length="32" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

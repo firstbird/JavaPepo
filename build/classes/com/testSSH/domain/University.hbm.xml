@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-20 8:09:50 by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.testSSH.domain.University" table="university" catalog="xiaonei" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="country" class="com.testSSH.domain.Country" fetch="select">
+            <column name="countryId" />
+        </many-to-one>
+        <many-to-one name="province" class="com.testSSH.domain.Province" fetch="select">
+            <column name="proId" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="64" not-null="true" />
+        </property>
+        <set name="useruniversities" table="useruniversity" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="universityId" />
+            </key>
+            <one-to-many class="com.testSSH.domain.Useruniversity" />
+        </set>
+    </class>
+</hibernate-mapping>
